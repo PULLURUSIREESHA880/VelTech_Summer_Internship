@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Patient</title>
+</head>
+<body>
+
+<h2>Edit Patient</h2>
+
+<form method="POST">
+
+    <label>Name</label><br>
+    <input type="text" name="name" value="{{ patient.name }}" required>
+    <br><br>
+
+    <label>Age</label><br>
+    <input type="number" name="age" value="{{ patient.age }}" required>
+    <br><br>
+
+    <label>Gender</label><br>
+    <select name="gender">
+        <option value="Male" {% if patient.gender=="Male" %}selected{% endif %}>Male</option>
+        <option value="Female" {% if patient.gender=="Female" %}selected{% endif %}>Female</option>
+        <option value="Other" {% if patient.gender=="Other" %}selected{% endif %}>Other</option>
+    </select>
+    <br><br>
+
+    <label>Phone</label><br>
+    <input type="text" name="phone" value="{{ patient.phone }}" required>
+    <br><br>
+
+    <label>Disease</label><br>
+    <input type="text" name="disease" value="{{ patient.disease }}" required>
+    <br><br>
+
+    <button type="submit">Update Patient</button>
+
+</form>
+
+<br>
+
+<a href="/patients">← Back to Patients</a>
+
+</body>
+</html>

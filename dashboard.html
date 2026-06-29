@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🏥 AI Healthcare Billing & Prescription System</h2>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h1>Welcome to Dashboard</h1>
+
+    <div class="cards">
+
+        <!-- Patients -->
+        <div class="card">
+            <h2>👨‍⚕️ Patients</h2>
+            <p>Manage Patients</p>
+            <a href="/patients">Open</a>
+        </div>
+
+        <!-- Upload Prescription -->
+        <div class="card">
+            <h2>📄 Upload Prescription</h2>
+            <p>Upload Doctor Prescription</p>
+            <!-- FIXED: link points to /upload (page) -->
+            <a href="/upload">Open</a>
+        </div>
+
+        <!-- Billing -->
+        <div class="card">
+            <h2>💰 Billing</h2>
+            <p>Generate Hospital Bills</p>
+            <a href="/billing">Open</a>
+        </div>
+
+        <!-- History -->
+        <div class="card">
+            <h2>📜 History</h2>
+            <p>Patient Medical Records</p>
+            <a href="/history">Open</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

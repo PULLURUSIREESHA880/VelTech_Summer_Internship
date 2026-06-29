@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Patient History</h1>
+
+    <h2>Patients</h2>
+    <table>
+        <tr><th>Name</th><th>Age</th><th>Gender</th><th>Phone</th><th>Disease</th></tr>
+        {% for p in patients %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.gender }}</td>
+            <td>{{ p.phone }}</td>
+            <td>{{ p.disease }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Prescriptions</h2>
+    <table>
+        <tr><th>Patient Name</th><th>Image</th></tr>
+        {% for pr in prescriptions %}
+        <tr>
+            <td>{{ pr.patient_name }}</td>
+            <td><img src="{{ url_for('static', filename='uploads/' + pr.image) }}" width="100"></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Bills</h2>
+    <table>
+        <tr><th>Patient Name</th><th>Medicine</th><th>Quantity</th><th>Total</th></tr>
+        {% for b in bills %}
+        <tr>
+            <td>{{ b.patient_name }}</td>
+            <td>{{ b.medicine_name }}</td>
+            <td>{{ b.quantity }}</td>
+            <td>{{ b.total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

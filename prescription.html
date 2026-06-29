@@ -1,0 +1,17 @@
+<h2>Prescriptions</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Patient Name</th>
+    <th>File</th>
+  </tr>
+  {% for pr in prescriptions %}
+  <tr>
+    <td>{{ pr.id }}</td>
+    <td>{{ pr.patient_name }}</td>
+    <td>
+      <img src="{{ url_for('static', filename='uploads/' + pr.image) }}" width="100">
+    </td>
+  </tr>
+  {% endfor %}
+</table>

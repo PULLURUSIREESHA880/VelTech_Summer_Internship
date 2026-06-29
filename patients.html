@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2>Patients</h2>
+            <div>
+                <a href="/dashboard">Back</a>
+                <a href="/add_patient">+ Add Patient</a>
+            </div>
+        </div>
+
+        <form action="/patients/search" class="search-bar">
+            <input type="text" name="keyword" placeholder="Search Patient" value="{{ keyword if keyword else '' }}">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Disease</th>
+                    <th>Action</th>
+                </tr>
+                {% for p in patients %}
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.age }}</td>
+                    <td>{{ p.gender }}</td>
+                    <td>{{ p.phone }}</td>
+                    <td>{{ p.disease }}</td>
+                    <td class="action-links">
+                        <a href="/edit_patient/{{p.id}}">Edit</a> |
+                        <a href="/delete_patient/{{p.id}}" onclick="return confirm('Delete this patient?')">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Prescription</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="upload-container">
+    <h2>📄 Upload Prescription</h2>
+
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+      <input type="text" name="patient_name" placeholder="Patient Name" required>
+      <input type="file" name="file" required>
+      <button type="submit">Upload Prescription</button>
+    </form>
+
+    <!-- ✅ Display only the latest flash message -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <p class="flash-message">{{ messages[-1] }}</p>
+      {% endif %}
+    {% endwith %}
+
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+  </div>
+</body>
+</html>

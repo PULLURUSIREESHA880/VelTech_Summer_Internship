@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Billing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Generate Hospital Bill</h2>
+
+  <!-- ✅ Bill generation form -->
+  <form method="POST" action="/generate_bill">
+    <input type="text" name="patient_name" placeholder="Patient Name" required>
+    <input type="text" name="medicine_name" placeholder="Medicine Name" required>
+    <input type="number" name="quantity" placeholder="Quantity" oninput="calculateTotal()" required>
+    <input type="number" name="total_amount" placeholder="Total Amount" required>
+    <button type="submit">Generate Bill</button>
+  </form>
+
+  <!-- ✅ Flash messages -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <p style="color:green;">{{ messages[-1] }}</p>
+    {% endif %}
+  {% endwith %}
+
+  <!-- ✅ Bills table -->
+  <h3>All Bills</h3>
+  <table border="1">
+    <tr>
+      <th>Patient Name</th>
+      <th>Medicine</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    {% for bill in bills %}
+    <tr>
+      <td>{{ bill.patient_name }}</td>
+      <td>{{ bill.medicine_name }}</td>
+      <td>{{ bill.quantity }}</td>
+      <td>{{ bill.total }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <!-- ✅ Print button placed after the table -->
+  <br>
+  <button onclick="window.print()">Print Bill</button>
+
+  <br><br>
+  <a href="/dashboard">Back to Dashboard</a>
+
+  <!-- ✅ Auto calculation script -->
+  <script>
+    function calculateTotal() {
+      const quantity = document.querySelector('input[name="quantity"]').value;
+      const price = 50; // example medicine price per unit
+      document.querySelector('input[name="total_amount"]').value = quantity * price;
+    }
+  </script>
+</body>
+</html>

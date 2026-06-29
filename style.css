@@ -1,0 +1,374 @@
+body{
+
+margin:0;
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#f5f5f5;
+
+}
+
+.navbar{
+
+background:#0d6efd;
+
+color:white;
+
+padding:18px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.navbar a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:18px;
+
+}
+
+.container{
+
+padding:40px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h2{
+
+color:#0d6efd;
+
+}
+
+.card p{
+
+margin:20px 0;
+
+}
+
+.card a{
+
+display:inline-block;
+
+background:#0d6efd;
+
+color:white;
+
+padding:10px 25px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+}
+/* ===== Auth Pages (Login/Register) ===== */
+.auth-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    color: #0d6efd;
+}
+
+.auth-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.auth-container button {
+    width: 95%;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+.auth-container button:hover {
+    background: #0b5ed7;
+}
+
+.auth-container a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+/* ===== Form Pages (Add/Edit Patient etc.) ===== */
+.form-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0d6efd;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form-container button:hover {
+    background: #0b5ed7;
+}
+
+.form-container a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+/* ===== Patients Page ===== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.page-header h2 {
+    color: #0d6efd;
+    margin: 0;
+}
+
+.page-header a {
+    background: #0d6efd;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.page-header a:hover {
+    background: #0b5ed7;
+}
+
+/* Search bar */
+.search-bar {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background: #0d6efd;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search-bar button:hover {
+    background: #0b5ed7;
+}
+
+/* Patients table */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #0d6efd;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background: #f9f9f9;
+}
+
+/* Action links */
+.action-links a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #0d6efd;
+}
+
+.action-links a:hover {
+    text-decoration: underline;
+}
+/* ===== Upload Prescription Page ===== */
+.upload-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #0d6efd, #6c63ff);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    color: white;
+    text-align: center;
+}
+
+.upload-container h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.upload-container input[type="text"],
+.upload-container input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.upload-container input[type="text"] {
+    background: #fff;
+    color: #333;
+}
+
+.upload-container input[type="file"] {
+    background: #fff;
+    cursor: pointer;
+}
+
+.upload-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6b6b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.upload-container button:hover {
+    background: #e63946;
+    transform: scale(1.05);
+}
+
+.upload-container a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.flash-message {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #ffe066;
+}
